@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
+    <head>
+        <title> 
+            Movie Cinema
+        </title>
+        <style>
+            p{
+                color: rgb(255, 0, 0); 
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                text-shadow: -0.5px 0 whitesmoke, 0 0.5px whitesmoke, 0.5px 0 whitesmoke, 0 -0.5px whitesmoke;
+                font-size: 20px;
+                
+            }
+            h1{
+                color:rgb(255, 0, 0);
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 50px;
+                text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
+            }
+            .type{
+
+                color: rgb(255, 4, 4);
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 25px;
+                text-shadow: -0.5px 0 whitesmoke, 0 0.5px whitesmoke, 0.5px 0 whitesmoke, 0 -0.5px whitesmoke;
+                
+            }
+            .output1 {
+                color: rgb(255, 4, 4);
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 25px;
+                text-shadow: -0.5px 0 whitesmoke, 0 0.5px whitesmoke, 0.5px 0 whitesmoke, 0 -0.5px whitesmoke;
+                padding-left: 700px;
+            }
+            
+       
+          button{
+            font-size: 20px;
+            padding: 7px 24px 7px 24px;
+            border-radius: 20px;
+            margin: 10px;
+            color: azure;
+            background-color:rgb(202, 55, 55);
+
+          }
+          #Container{
+            text-align: center;
+          }  
+          #a1 {
+                 border-radius: 50px;
+                 background:white;
+                 padding:  7px 24px 7px 24px; 
+                width: 200px;
+                 height: 15px;    
+            }
+            .footer {
+                         position: fixed;
+                         left: 0;
+                            bottom: 0;
+                            width: 100%;
+                        background-color:rgb(215, 40, 40) ;
+                        text-color:black;
+                         text-align: center;
+                         
+                    }
+              li{
+                color: rgb(255, 255, 255);
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 25px;
+                text-shadow: -0.5px 0 rgb(0, 0, 0), 0 0.5px rgb(0, 0, 0), 0.5px 0 rgb(0, 0, 0), 0 -0.5px rgb(0, 0, 0);
+              }   
+              ul{
+                padding-left: 700px;
+              }   
+
+            
+                    
+        </style>
+    </head>
+    <body background: url("image.jpg")>
+        
+        <br>
+        <br>
+
+
+    
+        <h1 style="text-align:center;"> Welcome to Movie Recommendation System</h1><br>
+        <form action="/" method="POST">
+            <p style="text-align:center;  font-size:30px;"> Movie Name      <input type="text" name="weight" id="a1"></p>
+            <p style="text-align:center; font-size:30px;" > Movie Rating <input type="text" name="height" id="a1" ></p>
+                <div id="Container">
+                    <button onclick="typeWriter(),display()"; id="bt" type="submit" value="submit">
+                        <i class="fa fa-search"></i>Search
+                    </button>
+                </div>
+         </form>
+
+         <div class="footer">
+            <h4>Copyright @Dcu Cloud Computing Group 9 DNAA 2022-23  </h4>
+          </div>
+         
+       
+        
+
+    </body>
+    
+
+        <p class="type" id="demo" style="text-align:center;"></p>
+        <br>
+        
+        <p class="output1" id="demo1">
+        {% if bmi %}
+            <p>Your Recommended Movies Are:
+                <ul>
+                    <li>{{bmi[0]}}</li>
+                    <li>{{bmi[1]}}</li>
+                    <li>{{bmi[2]}}</li>
+                    <li>{{bmi[3]}}</li>
+                    <li>{{bmi[4]}}</li>
+                </ul>
+            </p>
+        {% endif %}
+      </p>    
+
+        <script>
+        var i = 0;
+        var txt = 'Please wait till we fetch your movie recommendation ...';
+        var speed = 100;
+        // creating typeWriter Animation
+        function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+        }
+        </script>
+       
+        </script>
+</html>
